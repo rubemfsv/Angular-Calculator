@@ -54,8 +54,8 @@ export class CalculadoraComponent implements OnInit {
    */
 
   concatenarNumero(numeroAtual: string, numeroConcat: string): string {
-    // Caso contenha apenas '0' ou null, reinicia o valor
-    if (numeroAtual === '0' || numeroAtual === 'null') {
+    // caso contenha apenas '0' ou null, reinicia o valor
+    if (numeroAtual === '0' || numeroAtual === null) {
       numeroAtual = '';
     }
 
@@ -64,8 +64,8 @@ export class CalculadoraComponent implements OnInit {
       return '0.';
     }
 
-    // caso '.' digitado e já contenha um '.', ignora
-    if (numeroConcat === '0' && numeroAtual.indexOf('.') > -1) {
+    // caso '.' digitado e já contenha um '.', apenas retorna
+    if (numeroConcat === '.' && numeroAtual.indexOf('.') > -1) {
       return numeroAtual;
     }
 
@@ -132,7 +132,6 @@ export class CalculadoraComponent implements OnInit {
     if (this.numero2 !== null) {
       return this.numero2;
     }
-
     return this.numero1;
   }
 }
